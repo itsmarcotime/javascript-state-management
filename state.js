@@ -7,7 +7,7 @@ class State {
         this.state = state;
     }
 }
-class StandingLeft extends State {
+export class StandingLeft extends State {
     constructor(player) {
         super('STANDING LEFT');
         this.player = player;
@@ -17,11 +17,11 @@ class StandingLeft extends State {
     }
     handleInput(input) {
         if (input === 'PRESS right') {
-            //set state to StandingRight
+            this.player.setState(states.STANDING_RIGHT);
         }
     }
 }
-class StandingRight extends State {
+export class StandingRight extends State {
     constructor(player) {
         super('STANDING RIGHT');
         this.player = player;
@@ -31,7 +31,7 @@ class StandingRight extends State {
     }
     handleInput(input) {
         if (input == 'PRESS left') {
-            //set state to StandingLeft
+            this.player.setState(states.STANDING_LEFT);
         }
     }
 }
